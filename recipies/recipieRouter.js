@@ -17,4 +17,8 @@ router.get('/', (req, res) =>
     })
 })
 
+router.get('/:id/shopplingList', (req, res) =>
+{
+    
+})
 module.exports = router;
