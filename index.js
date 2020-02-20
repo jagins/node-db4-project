@@ -1,8 +1,12 @@
 const express = require('express');
 
+const recipieRouter = require('./recipies/recipieRouter');
+
 const server = express();
 
 server.use(express.json());
+
+server.use('/api/recipies', recipieRouter);
 
 server.get('/', (req, res) =>
 {

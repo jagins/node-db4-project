@@ -1,5 +1,10 @@
 const express = require('express');
 
-const router = expess.Router();
+const router = express.Router();
+
+router.get('/', (req, res) =>
+{
+    res.json({message: 'recipies'});
+})
 
 module.exports = router;
