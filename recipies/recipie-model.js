@@ -1,10 +1,10 @@
 const database = require('../data/db-config');
 
-function find()
+function getRecipies()
 {
-
+    return database('recipies')
 }
 
 module.exports = {
-    find
+    getRecipies
 }

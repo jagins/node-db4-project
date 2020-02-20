@@ -6,7 +6,15 @@ const router = express.Router();
 
 router.get('/', (req, res) =>
 {
-    res.json({message: 'recipies'});
+    Recipies.getRecipies()
+    .then(recipies =>
+    {
+        res.status(200).json(recipies);
+    })
+    .catch(error =>
+    {
+        res.status(500).json({error: 'Unable to get recipies'});
+    })
 })
 
 module.exports = router;
