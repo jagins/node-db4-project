@@ -19,6 +19,10 @@ router.get('/', (req, res) =>
 
 router.get('/:id/shopplingList', (req, res) =>
 {
-    
+    Recipies.getShoppingList(req.params.id)
+    .then(getShoppingList =>
+    {
+        res.status(200).json(getShoppingList);
+    })
 })
 module.exports = router;
