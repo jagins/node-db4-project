@@ -25,7 +25,7 @@ exports.seed = function(knex) {
         },
         {
           recipie_id: 2,
-          ingredients_id: 3,
+          ingredients_id: 4,
           quanity: 2,
           unit: 'cups'
         },
