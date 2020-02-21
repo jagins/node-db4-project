@@ -61,7 +61,8 @@ exports.up = function(knex) {
             .onDelete('CASCADE');
         table.float('quanity')
             .unsigned()
-            .unique()
+            .notNullable();
+        table.string('unit')
             .notNullable();
     })
 };
