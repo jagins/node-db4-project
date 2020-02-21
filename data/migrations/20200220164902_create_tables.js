@@ -25,6 +25,8 @@ exports.up = function(knex) {
         table.integer('step_number')
             .unsigned()
             .notNullable();
+        table.string('step', 255)
+            .notNullable();
         table.integer('instruction_id')
             .unsigned()
             .notNullable()
