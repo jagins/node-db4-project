@@ -27,7 +27,24 @@ function getShoppingList(recipie_id)
         .join('ingredients', 'recipie_ingredients.id', 'ingredients.id')
         .where('recipie_ingredients.recipie_id', recipie_id);
 }
+
+function getIntructions(recipie_id)
+{
+    /* SELECT	s.step_number,
+		s.step 
+    from steps s 
+    join recipies as r ON s.instruction_id = r.id 
+    WHERE s.instruction_id = 1
+    */
+
+    return database.select('steps.step_number', 'steps.step')
+            .from('steps')
+            .join('recipies', 'steps.instruction_id', 'recipies.id')
+            .where('steps.instruction_id', recipie_id);
+}
+
 module.exports = {
     getRecipies,
-    getShoppingList
+    getShoppingList,
+    getIntructions
 }

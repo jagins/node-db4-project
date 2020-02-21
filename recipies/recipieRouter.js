@@ -24,5 +24,22 @@ router.get('/:id/shopplingList', (req, res) =>
     {
         res.status(200).json(getShoppingList);
     })
+    .catch(error =>
+    {
+        res.status(500).json({error: 'Could not retrieve shopping list from database'});
+    })
+})
+
+router.get('/:id/getInstructions', (req, res) =>
+{
+    Recipies.getIntructions(req.params.id)
+    .then(instructions =>
+    {
+        res.status(200).json(instructions);
+    })
+    .catch(error =>
+    {
+        res.status(500).json({message: 'Could not get instructions from the database'});
+    })
 })
 module.exports = router;
